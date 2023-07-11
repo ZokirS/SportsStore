@@ -146,7 +146,7 @@ namespace SportsStore.Tests
             mockContext.SetupGet(c=>c.Session).Returns(mockSession.Object);
 
             //Action
-            CartModel cartModel = new CartModel(mock.Object)
+            CartModel cartModel = new CartModel(mock.Object, testCart)
             {
                 PageContext = new PageContext(new ActionContext
                 {
@@ -182,7 +182,7 @@ new Product { ProductID = 1, Name = "P1" }
             Mock<HttpContext> mockContext = new Mock<HttpContext>();
             mockContext.SetupGet(c => c.Session).Returns(mockSession.Object);
             // Action
-            CartModel cartModel = new CartModel(mockRepo.Object)
+            CartModel cartModel = new CartModel(mockRepo.Object, testCart)
             {
                 PageContext = new PageContext(new ActionContext
                 {
